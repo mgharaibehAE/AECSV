@@ -39,7 +39,7 @@ if uploaded_file:
 
     # Display data under the logo
     st.write("### Dataset Preview")
-    st.dataframe(pd.read_csv(tmp_file_path).head())
+    st.dataframe(pd.read_csv(tmp_file_path))
 
     # Initialize embeddings and FAISS vector store
     embeddings = OpenAIEmbeddings(openai_api_key=user_api_key)  
