@@ -14,7 +14,7 @@ st.image(logo_url, width=200)
 # Sidebar input for OpenAI API Key
 user_api_key = st.sidebar.text_input(
     label="#### Your OpenAI API key 👇",
-    placeholder="Paste your OpenAI API key, sk-",
+    placeholder="Please Enter your OpenAI API key",
     type="password"
 )
 
@@ -66,7 +66,7 @@ if uploaded_file:
 
     # Initialize session state if not present
     st.session_state.setdefault('history', [])
-    st.session_state.setdefault('generated', ["I am your analytical assistant, here to provide insights and analysis at your request. " + uploaded_file.name])
+    st.session_state.setdefault('generated', ["I am your analytical assistant, here to provide insights and analysis at your request. "])
     st.session_state.setdefault('past', ["Greetings!"])
 
     # Containers for chat history and user input
@@ -90,7 +90,7 @@ if uploaded_file:
         with response_container:
             for i in range(len(st.session_state['generated'])):
                 st.write(f"User: {st.session_state['past'][i]}")
-                st.write(f"Bot: {st.session_state['generated'][i]}")
+                st.write(f"Chatbot: {st.session_state['generated'][i]}")
 
     # Compile chat history into a string
     chat_history_str = "\n".join(
